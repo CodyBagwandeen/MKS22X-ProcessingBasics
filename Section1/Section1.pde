@@ -45,19 +45,20 @@ class Visualizer {
     //fill(0, 255, 0); //green
     //rect(x+120, y+50, 60, 50);
 
-    for ( int i =0; i < 10; i++) {
-      if (values[i] > 0 && values[i] < 50) { 
-        fill(0, 0, 255); //
-      }
-      if (values[i] < 100 && values[i] > 50) { 
-        fill(0, 255, 0); // green
-      }
-      if (values[i] < 200 && values[i] > 150) { 
-        fill(255, 0, 0); //  red
-      }else { 
-        fill(255, 255, 0); //
-      }
+    for (int i  = 0; i < 10; i++) {
       
+      if (values[i] <= 100 && values[i] > 50){
+        fill(255, 0, 0);
+      }
+      else if (values[i] <= 50 && values[i] > 0) {
+        fill(255, 128, 0); 
+      }
+      else if (values[i] <= 0 && values[i] > -50) {
+        fill(255, 255, 0); 
+      }
+      else if (values[i] <= -50) {
+        fill(0, 255, 0);
+      }
       rect(x + 40 * i, y + 100, 40, values[i]);
     }
 
